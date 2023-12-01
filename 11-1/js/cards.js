@@ -1,9 +1,9 @@
-import {tovarsObj} from './tovars.js';
+import {tovarsObj} from "./tovars.js";
 let cards=Array.from(document.querySelectorAll(".card"));
 console.log(cards);
 cards.forEach(function(elem,index)
 {
-    elem.querySelector("img").scr=`img/${tovarsObj[index].imgScr}`
+    elem.querySelector("img").src=`img/${tovarsObj[index].imgSrc}`
     elem.querySelector("h5").innerHTML=`<br>${tovarsObj[index].nameTovar}`
     let str=`<br>Корпус: ${tovarsObj[index].corpus}
     <br>Ремешок: ${tovarsObj[index].remen}
