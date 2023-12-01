@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 1140px;
+        margin: 0 auto;
+    }
+    .timer{
+        font-size: 20px;
+    }
+    span{
+        color: red;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Напишите таймер обратного отсчета для акции. В стиле «До конца распродажи осталось 10 дней 12 часов». Конец акции – 1 января 2024 года.</h1>
+        <div class="time">
+            <span class="timer"></span>
+            <p>Конец акции – 1 января 2024 года.</p> 
+        </div>
+    </div>
+</body>
+<script>
+let end=new Date(2024,0,1);
+    function countdown(){
+        let now=new Date();
+        let str="";
+        let days=Math.floor((end-now)/(1000*60*60*24));
+        let hours=24-now.getHours();
+        str=`До распродажи осталось ${days} дней ${hours} часов`;
+    document.querySelector(".timer").innerHTML=str;
+}
+setInterval("countdown()",1000);
+</script>
+</html>
