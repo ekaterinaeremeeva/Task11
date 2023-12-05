@@ -1,5 +1,5 @@
-'use strict'
-export let tovarsObj=[{
+export let tovarsObj=[
+{
     nameTovar:"Фитнес-браслет DEXP SB60",
     imgSrc:"dexp_sb60.jpg",
     corpus:"черный",
