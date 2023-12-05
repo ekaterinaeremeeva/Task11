@@ -28,15 +28,16 @@
 </body>
 <script>
 let end=new Date(2024,0,1);
-    function countdown(){
+    function timer(){
         let now=new Date();
         let str="";
         let days=Math.floor((end-now)/(1000*60*60*24));
-        let hours=24-now.getHours();
-        let minutes=60-now.getMinutes();
-        str=`До распродажи осталось ${days} дней ${hours} часов ${minutes} минут`;
+        let hours=Math.round((end-now)/(1000*60*60)%24);
+        let minutes=Math.round((end-now)/(1000*60)%60);
+        let seconds=Math.round((end-now)/(1000)%60)
+        str=`До распродажи осталось ${days} дн., ${hours} ч, ${minutes} мин и ${seconds} сек`;
     document.querySelector(".timer").innerHTML=str;
 }
-setInterval("countdown()",1000);
+setInterval("timer()",1000);
 </script>
 </html>
